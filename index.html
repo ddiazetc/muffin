@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Happy birthday Mom!</title>
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+		<div id="container">
+		
+			<header>
+				<h1><span class="highlight">Happy birthday, Mom!</span></h1>
+				<h2><span class="highlight">Hover or click/touch.</span></h2>
+			</header>
+
+
+			<div id="imgcontainer">
+				
+				<script>
+
+				var num_imgs = 12;
+				for (var i = 1; i<=num_imgs; i++) {
+					var img = new Image();
+					var randInt1 = Math.floor((Math.random()*30)+1);
+					var randInt2 = Math.floor((Math.random()*30)+1);
+					var filetype = '.jpg';
+					var add_onmouseover_attribute_str = "this.src='images/"+randInt1+filetype+"'";
+					var add_onmouseout_attribute_str = "this.src='images/"+randInt2+filetype+"'";
+					//alert(add_onmouseover_attribute_str);
+					img.setAttribute("onmouseover",add_onmouseover_attribute_str);
+					img.setAttribute("onmouseout",add_onmouseout_attribute_str);
+					img.addEventListener("mouseover", function(event){
+						
+						var randInt4 = Math.floor((Math.random()*30)+1);
+						
+						add_onmouseout_attribute_str = "this.src='images/"+randInt4+filetype+"'";
+						
+						event.target.setAttribute("onmouseout",add_onmouseout_attribute_str);
+						
+					});
+					img.addEventListener("mouseout",function(event){
+						var randInt3 = Math.floor((Math.random()*30)+1);
+						add_onmouseover_attribute_str = "this.src='images/"+randInt3+filetype+"'";
+						event.target.setAttribute("onmouseover",add_onmouseover_attribute_str);
+					});
+					img.addEventListener("click",function(event){
+
+						var randInt5 = Math.floor((Math.random()*30)+1);
+						var new_img_src = "this.src='images/"+randInt5+filetype+"'";
+						var newpath = "images/"+randInt5+filetype; //can't have single quotes surrounding it
+						event.target.src=newpath;
+					});
+					
+					var path = "";
+					path = path.concat('images/',i.toString(),filetype);
+					//alert(path);
+					img.src = path.toString();
+					document.getElementById("imgcontainer").appendChild(img);
+				}
+
+				</script>
+			</div><!--imgcontainer-->
+
+			<footer><span class="highlight">
+				From Danny
+			</span></footer>
+		</div><!--container-->
+	</body>
+</html>

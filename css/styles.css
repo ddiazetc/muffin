@@ -1,0 +1,55 @@
+body{
+	background-image: url("../images/muffinbg2.jpg"); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		
+}
+
+header, footer{
+	margin: 0 auto;
+	padding-bottom: 10px;
+	font-family: 'Georgia', 'Helvetica', 'Arial';
+	
+
+	text-align: center;
+}
+
+h1, h2{
+	margin:0;
+}
+
+h1{
+	color: darkblue;
+}
+
+h2{
+	color: blue;
+}
+
+.highlight{
+	background-color: tomato;
+}
+
+footer{
+	margin-top: 10px;
+	color: cyan;
+}
+
+#container{
+	margin: 0 auto; 
+	width: 80%;
+	max-width: 800px;
+	min-width: 500px;
+}
+
+#imgcontainer{
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 auto; 
+
+}
